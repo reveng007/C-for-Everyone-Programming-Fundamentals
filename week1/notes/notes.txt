@@ -73,4 +73,11 @@ First Program:
 
         Simple input/output - fahrenheit
 
+            see: Temp_unit_chnge/
+
+        
+        Simple input/output - miles
+
+            see: dist_unit_chnge/
+
             

@@ -1,0 +1,34 @@
+Two types of extensions in C:
+ 
+ 1. Header files:
+
+ for eg:
+
+filename: products.h
+
+content: void display_products(int);
+         double get_price(int);
+
+
+2. Source code files:
+
+for eg:
+
+filename: inventory.c
+
+content: #include "products.h"
+         
+         void print_inventory(int id) {
+
+             display_products(id);
+         }
+         
+
+COMPILING C Source Code Files:
+
+        | High-lvl overview |
+
+|-------------|  Compiler   |--------------|    Linker     |------------|
+| Source File | ----------> | Object files | ------------> | Executable |
+|-------------|             |--------------|               |------------|
+

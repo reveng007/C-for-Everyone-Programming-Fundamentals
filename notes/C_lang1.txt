@@ -1,0 +1,70 @@
+Two types of extensions in C:
+ 
+ 1. Header files:
+
+ for eg:
+
+filename: products.h
+
+content: void display_products(int);
+         double get_price(int);
+
+
+2. Source code files:
+
+for eg:
+
+filename: inventory.c
+
+content: #include "products.h"
+         
+         void print_inventory(int id) {
+
+             display_products(id);
+         }
+         
+
+COMPILING C Source Code Files:
+
+        | High-lvl overview |
+
+|-------------|  Compiler   |--------------|    Linker     |------------| Loader |---------|
+| Source File | ----------> | Object files | ------------> | Executable |------->|Execution|
+|--file.c-----|             |---file.obj---|      |        |--file.exe--|        |---------|
+                                                  | 
+                                                  V 
+                                            Libray function
+
+Every file that contains a C program must be saved with ‘.c’ extension. This is necessary for the compiler to understand that this
+is a C program file. Suppose a program file is named, first.c. The file first.c is called the source file which keeps the code of the program. 
+Now, when we compile the file, the C compiler looks for errors. If the C compiler reports no error, then it stores the file as a .obj file of the same name, 
+called the object file. So, here it will create the first.obj. This .obj file is not executable. The process is continued by the Linker which finally gives 
+a .exe file which is executable.
+
+
+LINKER: 
+
+First of all, let us know that library functions are not a part of any C program but of the C software. Thus, the compiler doesn’t know the operation
+of any function, whether it be printf or scanf. The definitions of these functions are stored in their respective library which the compiler should be able 
+to link. 
+
+This is what the Linker does. 
+So, when we write #include, 
+
+1. it includes stdio.h library which gives access to Standard Input and Output. 
+
+2. The linker links the object files to the library functions and the program becomes a .exe file. Here, first.exe will be created which is in an executable 
+format.
+
+
+LOADERS:
+
+Whenever we give the command to execute a particular program, the loader comes into work. The loader will load the .exe file in RAM and inform the CPU with 
+the starting point of the address where this program is loaded. 
+
+
+see: C_image.png file
+
+see: https://www.geeksforgeeks.org/how-does-a-c-program-executes/
+
+

@@ -1,3 +1,8 @@
+Refer to this site continuously along with course:
+
+    see: https://www.cprogramming.com/tutorial/c-tutorial.html?inl=nv
+
+
 Week 1:
 
     Getting Started:
@@ -283,5 +288,144 @@ Week 2:
                     
                                                         gcc filename.exe -o filename.c -lm
 
+Week 3:
+
+    Logical operators, expressions, and short-cicuit evaluation:
+
+        1. Relational Operators and expressions:
+
+            Logical operators, expressions, and short-circuit evaluation:
+
+                see: logical_operators/
+
+                precedence of short-cicuit opearator '&&' and '||'  is very low
+
+                Short-circuit evaluation:
+
+                Short circuiting is something that will happen when your program is running and it hits a 
+                conditional.  A short circuit in logic is when you know for sure that an entire complex 
+                conditional is either true or false before you evaluate the whole thing.
+
+                Just the same concept as the short ckt in curent electricity
+                
+                Short circuiting with the two binary logical operators, AND (&&) and OR (||). 
+
+        2. The Compound Statement:
+
+            The conditonal statement if and if-else:
+                
+                see: if_else/
+
+                expressions:
+                
+                    zero     --> "false"
+                    non-zero --> "true"
+
+                    ***NOTE: Precedence comes after arithmetic operators, +, -, *, /
+                                                            
+            The iterative statement while:
+
+                see: for_&_while/(Both while.c and while_with_out_compd.c woks the same)
+
+                1. Run the script: produce a.out file : gcc < C script>
+                   Then change permission to execute. and then : ./a.out < <path to a file>
+                                                                         ^
+                                                                         |               |-----|----------------------Redirection...
+                                                                         |----------------     V
+                2. Can also done normally: gcc -o <file.exe>  < C script> ,then: ./compile.exe < <path to a file>
+
+                ***NOTE: '<' is used to input file to the C script
+
+                syntax:
+
+                    while (i < 10 )
+                    {
+                        printf("%d", i);
+                        i++
+                    }
+
+            while-code-example:
+
+                see: for_&_while/while2.c
+
+        3. While loop questions:
+
+            The For statement and its While analog:
+
+                    eg: for(Initialization ; terminate cond.; increament/decreament)
+                        {
+                            printf("Count %d sheep\n",i);
+                        }
+
+            for statement code example:
+            
+                see: for_&_while/for_loop.c
+
+                compare result of 1.c and 2.c and see the difference caused due to getchar()
+
+            oddball operators-conditional and comma:
+
+                see: for_&_while/
+
+                conditional operators/ Ternary operators: ? , :
+
+                    Syntax: main_expr ? expr_1 : expr_2
+
+                        c = (a < b)? a : b 
+
+                        means-->
+                                if (a < b)
+                                    c = a;
+                                else
+                                    c = b;
+                    
+                comma operator: ,
+
+                    Syntax:  expr_1 , expr_2
+
+                        eg: c = (a = 0, b = 1)
+
+                            then 
+                                c = ((a = 0), (b = 1));
+                                printf("c = %d", c);
+                                |________
+                                        |
+                                        V
+                                    Prints 1
+
+
+                            Multiple Initialization:
+
+                                for( sum = 0, i = 0; i <= 50; i++)
+                                {
+                                    sum += i;  -----> 1+2+3+...+50
+                                }
+
+            ternary-operator code example:
+
+                see: for_&_while/ternary_and_switch_case.c
+
+            
+        4. Why the goto should be avoided:
+
+            Break and continue and switch (File included +):
 
                 
+                see: break_continue_switch/
+
+                Syntax:
+                           label
+                            |
+                            V
+                    switch (i) 
+                    { 
+                        
+                    case labels ---> Data types used as case labels of switch statement in C are 
+                          |         integer,short,long and character. Float and Double can't be used as case labels.
+                          |
+                          V
+                        case 1: /* Code */; break;
+                        case 2: /* Code */; break;
+                        default: /* Code */; break;
+                    }
+

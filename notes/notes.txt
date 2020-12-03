@@ -429,3 +429,160 @@ Week 3:
                         default: /* Code */; break;
                     }
 
+Week 4:
+
+    
+    1. Functions:
+
+        Function definition
+
+            void wrt_address(void) // -->Just like int main()
+            {
+                printf("Ckaus\n")
+                printf("north pole\n")
+            }
+
+
+            ***NOTE: 
+
+                    If a Function's foo() return type is void then, it means
+                    | 
+                    |-->the function does not need any return statement
+
+
+
+
+            Uses: 
+
+                reuse
+                encapsulation
+                structure of code
+
+        Functions code example
+
+            see: week4/function1.c
+
+        Return statement           
+
+            * It is the flos of control keyword
+
+            return 0 --> ending of int main() in correct/expected way
+
+            syntax:
+
+                return; 
+
+                or, return expr;
+
+                eg: return 0; , return; , return (a+b); , return (0); 
+
+                double cube(double x)
+                {
+                return (x*x*x);
+                }
+                a = cube (2);
+
+        Function, declaration and prototypes
+
+            see: week4/function2.c and function3.c
+            
+
+        Function variables -with call-by-value explianed
+
+            see: week4/call_by_value.c
+             
+
+        Function Definition and scope rules
+
+            1. Requires declarations
+
+            2. Blocks: Nested Blocks and Parallel Blocks
+
+            3. Multiple use of same identifier name
+
+            4. lifetime of availability
+
+
+                Eg: lvl 1: loop1  x = 1
+
+                        {   
+                            x = 1 (received from upper lvl)
+                            lvl2: loop2  x = 2 (initialised)
+
+                            print x ----> x = 2
+                            {
+                                lvl3: loop3 x = 2 ( just upper lvl)
+                                 
+                                  x = 3 (initilised)
+
+                                  print x ---> x = 3
+                                  {
+                                      lvl 4: x = 3 (received from just upper lvl)
+
+                                      print x ---> x = 3
+                                  }
+                            
+                                print x ---> x = 3
+                            }
+
+                            print x ---> x = 2
+                        }
+
+                        print x ---> x = 1
+
+    2. Usage of storage classes:
+
+        Storage class code example
+
+            see:week4/storage.c, storage_common.c, storage_header.h
+
+                1.
+                 run: gcc -o compile.exe storage.c storage_common.c
+                 execute: ./compile.exe
+
+                2.
+                storage2.c
+
+                run: gcc -o compile.exe storage2.c
+                execute: ./compile.exe
+
+
+                None of the above steps worked ...!!!!
+
+        Simple Recurssion
+
+            see: week4/recurssion.c
+
+            1.  void count_down(int n)
+                {
+                    while (n > 0)
+                    {
+                        printf("time is %d\n",n );
+                        n--;
+                    }
+                    printf("Blast off\n);
+                }
+
+            OR,
+
+
+            2.  void recursive_count_down(int n)
+                {
+                    if (n == 0)
+                        printf("Blast off\n");
+                    else
+                        printf("Time is %d\n",n);
+                        recursive_count_down(n-1); // <---- Recursive function. happens repeteadly
+                }
+
+            Recurssion Factorial Code
+
+                n! = 1 * 2 * 3 ... * n
+                
+                see: week4/recurssion.c
+
+        Recursion fibonacci code:
+
+            see: week4/fibonacci.c
+
+            

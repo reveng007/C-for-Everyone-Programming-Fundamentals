@@ -1,0 +1,35 @@
+int arr[10] = {1, 0, 0, 0, 0, 2, 3, 0, 0, 0};   1 --> pos. 0  ,2 --> pos. 5  ,3 ---> pos. 6
+            
+                =
+
+int arr[10] = {[0] = 1, [5] = 2. [6] = 3};
+
+                =
+int arr[10] = {[0] = 1, [6] = 3, [5] = 2};     , Writting order doesn't matter.
+                ^   
+                |------designator = index
+
+designator = index
+
+
+
+***NOTE: Compiler will deduce the length of the array from the largest designator/index in the list:
+
+    For Eg: 
+
+            int a[] = {[5] = 90, [20] = 4, [1] = 45, [49] = 78 };
+                                                      |
+                                                      |------> 49th index/designator ===> size of array is 50
+
+
+**NOTE: If there is a clash, then designator initilizer will Win
+
+For Eg:                  ____________________> Designated value will Win
+                         |
+    int a[] = {1, 2, 3, [2] = 4, [6] = 45};
+
+                    =
+
+    int a[] = {1, 2, 4, 0, 0, 0, 45};
+
+    

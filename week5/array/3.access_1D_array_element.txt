@@ -1,0 +1,17 @@
+array_name[index]:
+
+    +---+---+---+
+arr |   |   |   |
+    +---+---+---+
+      0   1    2
+
+
+      arr[0] = 1st element
+
+      arr[1] = 2nd element
+      : ...
+      : ...
+
+
+
+

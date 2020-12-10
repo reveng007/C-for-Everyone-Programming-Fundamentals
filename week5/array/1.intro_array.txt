@@ -1,0 +1,11 @@
+I followed this playlist : https://www.youtube.com/playlist?list=PLBlnK6fEyqRjoG6aJ4FvFU1tlXbjLBiOP
+
+
+    An Array is a data structure which contains a number of data values/datatype (all of which are of same type)
+
+
+              +---+---+
+    array:    |   |   |   = 1D array
+              +---+---+
+
+

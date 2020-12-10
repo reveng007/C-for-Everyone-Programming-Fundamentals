@@ -1,0 +1,19 @@
+Multidimensional arrays can be defianed as an array of arrays
+
+
+
+Syntax:
+-------
+
+data_type name_of_array[size1][size2][size3]...[size3];
+
+
+For Example:  size of a[10][20] = 10 x 20 = 200
+
+                                = 200 x 4 = 800 bytes
+
+
+              size of a[4][10][20] = 4 x 10 x 20 = 800
+                                   
+                                   = 800 x 4 = 3200 bytes
+

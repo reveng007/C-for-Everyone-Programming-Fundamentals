@@ -1,0 +1,40 @@
+Syntax:
+
+    data_type nameofthearray[number of elements];
+
+declaration:
+                          +---+---+---+---+---+
+    int arr[5]; ----> arr |   |   |   |   |   |
+                          +---+---+---+---+---+
+
+    Compiler will allocate a contiguous block of memory of size = 5 *sizeof(int) ---> value of int depends on processor
+
+
+- Length of an array can be specified by any Positive integer constant expression:
+
+1. int arr[5];
+
+2. int arr[5+5];
+
+3. int arr[5*3];
+
+4. int arr[5*3];
+
+5. int arr[-5]; ----> X Can't be -ve 
+
+6. int a;
+   int arr[a =21/3];
+
+
+***NOTE:
+        Specify the length of an array using macro is considered to be an excellent practice.
+
+
+        #define N 10
+
+        int arr[N]; ----> as when we have to change the value of N used in the whole of the code, then we don't have to change 
+                        all the variable value to new value, We have to simply 
+                        
+                        change value of N in macro only
+
+

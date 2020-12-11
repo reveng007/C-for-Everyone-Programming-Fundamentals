@@ -168,17 +168,20 @@ int main(void)
     
     printf("And address of x is: %d\n", ptr); /* Note only p is used to ouput the address of x */
 
-    printf("Notice that the address of x is same even after the value of x is changed");
+    printf("Notice that the address of x is same even after the value of x is changed\n");
 
-    printf("Value of x: %d", x);
-    
-    /* 
-    The valid values for a pointer are entirely implementation-dependent, so, yes, a pointer address could be negative. ... 
-    Any value that can be represented by that 32-bit value might be a valid pointer. Other than the null pointer, any pointer value 
-    might be a valid pointer to an object.
+    printf("Value of x: %d\n", x);
 
-    */
+    printf("Value of x: %d", *(&x)); // x = *(&x)
 
     return 0;
 }
+
+/*
+
+***NOTE:
+
+        Printing the value of *(&i) is same as printing the value of i
+
+*/
 

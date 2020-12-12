@@ -6,7 +6,7 @@ int reps = 0;
 /*  the extern keyword extends the function’s visibility to the whole program, the function can be used (called) anywhere in any of 
 the files of the whole program, provided those files contain a declaration of the function
 */
-void f(void)
+void f(void) // It will not return any value as return type is void
 {
     static int called = 0; // value will not change
     printf("f called %d\n", called);

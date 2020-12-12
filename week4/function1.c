@@ -2,7 +2,7 @@
 /*          ____|________
             |Declaration|
             |           |    */
-void wrt_very(int count) // defining a function
+void wrt_very(int count) // defining a function, This function will not return anything as return type is void
 {
     while(count > 0)
     {

@@ -3,9 +3,9 @@ Refer to this site continuously along with course:
     see: https://www.cprogramming.com/tutorial/c-tutorial.html?inl=nv
 
 
-***NOTE:    Initialization gives a variable an initial value at the point when it is created/declared . 
+***NOTE:    Initialization gives a variable an initial value at the point when it is created. 
     
-            Assignment gives a variable a value at some point after the variable is created/declared .
+            Assignment gives a variable a value at some point after the variable is created. 
 
 
 Week 1:
@@ -441,9 +441,9 @@ Week 4:
 
         Function definition
 
-            void wrt_address(void) // -->Just like int main()
+            void wrt_address(void) // -->Just like int main() But it will not return anything as void is used as return type
             {
-                printf("Ckaus\n")
+                printf("Claus\n")
                 printf("north pole\n")
             }
 
@@ -558,7 +558,7 @@ Week 4:
 
             see: week4/recurssion.c
 
-            1.  void count_down(int n)
+            1.  void count_down(int n) // it will not return anything as void is used as return type
                 {
                     while (n > 0)
                     {
@@ -571,7 +571,7 @@ Week 4:
             OR,
 
 
-            2.  void recursive_count_down(int n)
+            2.  void recursive_count_down(int n) // it will not return anything as void is used as return type
                 {
                     if (n == 0)
                         printf("Blast off\n");

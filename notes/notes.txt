@@ -3,6 +3,11 @@ Refer to this site continuously along with course:
     see: https://www.cprogramming.com/tutorial/c-tutorial.html?inl=nv
 
 
+***NOTE:    Initialization gives a variable an initial value at the point when it is created/declared . 
+    
+            Assignment gives a variable a value at some point after the variable is created/declared .
+
+
 Week 1:
 
     Getting Started:

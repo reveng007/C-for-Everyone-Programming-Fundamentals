@@ -22,7 +22,7 @@ For example:               x
                                                                   = 1000
                                                                                ptr
                                                                     =====>  +--------+
-                                                                            |  1000  |
+                                                                            | 10000  |
                                                                             +--------+    
                                                                                2000
 
@@ -53,10 +53,10 @@ For example:               x
 
     *ptr --> means ??
 
-     |---> Step1. ptr: It will go to 'ptr' varible to see the value within it ---> It is actually done due to the presence of 'ptr'
+     |---> Step1. ptr: It will go to 'ptr' variable to see the value within it ---> It is actually done due to the presence of 'ptr'
 
            Step2. *ptr: Then due to presence of '*' with 'ptr', it will redirect  itself to that particular value stored within 'ptr'. Basically treating it as an address,
-                        it reaches address '1000', which is the base address of variable 'x' (here, which is the object), to store the value present within x variable.
+                        it reaches address '1000', which is the base address of variable 'x' (here, which is the object).
 
                                                                                                                     
 ***NOTE:
@@ -82,7 +82,7 @@ For example:               x
                                                                           = 1000
                                                                                       ptr
                                                                             =====>  +--------+
-                                                                                    | 10000  |
+                                                                                    |  1000  |
                                                                                     +--------+    
                                                                                        2000
 

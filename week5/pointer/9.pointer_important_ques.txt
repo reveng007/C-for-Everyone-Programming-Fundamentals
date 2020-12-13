@@ -1,0 +1,122 @@
+
+Question1:
+----------
+
+int *p = &i;
+p = &i;
+
+First statement is the declaration and second is simple assignment statement. Why isn't in second statement, p is precedent by *symbol?
+
+Answer----> In C, * symbol has different meanings depending on the context in which it's used.
+
+            So, here by indicating * operator , we are indicating the compiler that p is a pointer not a
+
+            normal variable.
+
+            1. At the time of declaration. * symbol is not acting as an indirection operator.
+
+            2. *symbol in the first statement tells the compiler that p is a pointer to an integer.
+
+            
+            But, if we write *p = &i then it is wrong, because here * symbol indicates the indirection operator
+            and we cannot assign the address to some integer variable.
+
+            *variable ---> tells us, it can hold addresses
+
+            variable ---> tells us, it can hold the values
+
+            We will get warning message: "warning: assignment to ‘int’ from ‘int *’ makes integer from pointer without a cast"
+
+            Therefore, in the second statement , there is no need of *symbol in front of p. It simply means we are assigning the address to a pointer.
+
+
+
+Question2:
+----------
+
+What is the output:
+
+void fun(const int *p)
+{
+    *p = 0;
+}
+
+int main()
+{
+    const int i = 10;
+    fun(&i);
+    return 0;
+}
+
+Answer--->
+
+1. In main(),  |   In func(const int *p),
+               |
+
+    i. Here, also const int i = 10
+
+    ii. And const int *p
+
+   fun(&i) -----> const int *p = &i [ Both i and *p are declared as "const int" so, there value can not be changed and to 
+   
+                                    equate different data types all of them should have indentical data types, the data types must match ]
+
+                => *p = &i , which is constant can't be changed
+
+                So, *p or i can't be initialised to zero, i.e. *p != 0
+
+                So, it will show a 
+                
+                error message: "Error: Assignment of read-only location *p"
+
+2. Another thing, in function func(const int *p),
+
+    return type is void, so it will not return anything
+
+
+
+Question3:
+----------
+
+How to print the address of a variable ?
+
+ANSWER---->
+
+use %p as a format specifier in printf function
+
+
+
+Question4:
+----------
+
+If i is a variable and p points to i, which of the following expessions are aliases of i?
+
+a) *p  b) *&p  c) &p  d) *i  e)  *&i
+
+
+ANSWER----->
+
+ATP:-
+----
+
+data_type i;
+data_type p  = &i;
+
+Suppose,
+
+    i         p
++-------+  +------+
+|  10   |  | 1000 |
++-------+  +------+ 
+  1000       2000
+
+a) *p = i  ==> *(1000) = i ===> 10 = i -------------> ✓ 
+
+b) *&p = p =+> *(2000) = p ==> 1000 = p
+
+c) &p = address of p = 2000
+
+d) *i = here i is not a pointer ==> doesn't make sense 
+
+e) *&i = i ==> *(1000) = i ===> 10 = i -----------------> ✓
+

@@ -53,10 +53,17 @@ For example:               x
 
     *ptr --> means ??
 
-     |---> Step1. ptr: It will go to 'ptr' variable to see the value within it ---> It is actually done due to the presence of 'ptr'
+     |---> ptr: In this case, compiler will recognise "ptr" variable as a normal variable
+     
+                It will go to 'ptr' variable to see the value within it. 
 
-           Step2. *ptr: Then due to presence of '*' with 'ptr', it will redirect  itself to that particular value stored within 'ptr'. Basically treating it as an address,
-                        it reaches address '1000', which is the base address of variable 'x' (here, which is the object).
+           *ptr: In this case, compiler will know "ptr" variable as a special variable i.e. a pointer
+           
+                 Then due to presence of '*' with 'ptr', it will redirect  itself to that particular value stored within 'ptr'. Basically treating the value
+           
+                 present within the 'ptr' variable as an address. 
+                 
+                 It reaches address '1000', which is the base address of variable 'x' (here, which is the object), to access the value present within x variable.
 
                                                                                                                     
 ***NOTE:

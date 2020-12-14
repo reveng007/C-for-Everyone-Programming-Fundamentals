@@ -1,0 +1,101 @@
+/*
+Question1:
+----------
+
+What happens if we add some integer to the pointer ??
+
+step1:
+-------
+
+    p 
+ +-----+
+ |     |-------|
+ +-----+       |
+               V
+             +----+----+----+----+----+----+----+----+
+          a  |    |    |    |    |    |    |    |    |
+             +----+----+----+----+----+----+----+----+
+               0     1    2    3    4   5     6    7
+
+    int *p = &(a[0])
+
+step2:
+-------
+
+ Let, 3 be integer which will be added
+
+ p = p + 3
+
+   p 
+ +-----+
+ |     |----------------------|
+ +-----+                      |
+                              V
+             +----+----+----+----+----+----+----+----+
+          a  |    |    |    |    |    |    |    |    |
+             +----+----+----+----+----+----+----+----+
+               0     1    2    3    4   5     6    7
+             1000 1004 1008 1012 1016 1020 1024 1028
+               |    |-------------------|
+               V                        |--------------> 2nd int gets stored within 1004 and 1007(included). And so on ...
+             1st int
+             gets stored 
+             within 1000 and 1003
+             (included)
+
+
+Base address is 1000
+
+
+ Initially, if p points to  a[0], then 
+
+ +-----------+       +-----------+
+ | p = p + 3 |   =   | &a[i + 3] | =  1000 + 3 x 4 = 1012 [ Assuming, sizeof(int) = 4 bytes ]
+ +-----------+       +-----------+
+
+
+Question2:
+----------
+
+Let say we have a pointer p and an array a.
+Intially, p contains the address of a 3rd element of array i.e., p = &a[2];
+
+what will be the index of the array( Not the address) after this operation: p = p + 2
+
+ATP:
+----
+
+Step1:
+-------
+
+int *p = &a[2];
+
+=> value of p at index 2
+
+   p 
+ +-----+
+ |     |------------------|
+ +-----+                  |
+                          V
+             +----+----+----+----+----+----+----+----+
+          a  |    |    |    |    |    |    |    |    |
+             +----+----+----+----+----+----+----+----+
+               0     1    2    3    4   5     6    7
+             1000 1004 1008 1012 1016 1020 1024 1028
+
+Base address is 1000
+
+
+answer:
+
+p = value of p at index 2
+
+( p = 2 + 2 ) = &a[4]
+
+New index: 2 + 2 = 4
+
+New address: 1008 + 2 x 4 = 1016
+
+
+*/
+

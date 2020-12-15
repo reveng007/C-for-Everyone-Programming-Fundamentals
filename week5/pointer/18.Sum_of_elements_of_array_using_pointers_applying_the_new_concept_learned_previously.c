@@ -40,7 +40,7 @@ int main(void)
         {
             int a[] = {11, 22, 36, 5, 2};
 
-            printf("%p", a++); -----> Output will be error --> step1: a = &a[0] => a = 1000 step2: a = a + 1 => a = (1000 + 1)byte = 1000 + (1 x 4) = 1004 
+            printf("%p", a++); -----> Output will be error --> step1: a = &a[0] => a = 1000 step2: a = a + 1 => a = (1000 + 1) = 1000 + (1 x 4)byte = 1004 
 
                                             ------> We can't change base address of an array,it is not allowed in case of array.
 
@@ -80,7 +80,7 @@ int main(void)
 
             printf("%p", *(++p)); -----> Here, We are Just accessing the value not assigning, OUTPUT will be : 22
             
-            ---> s1: p = p + 1 = (1000 + 1)byte = 1004 => *p = *(1004) = 22
+            ---> s1: p = p + 1 = (1000 + 1) = 1004 => *p = *(1004) = 22
 
             ---> s2: p = 1004 => *p = 22
 

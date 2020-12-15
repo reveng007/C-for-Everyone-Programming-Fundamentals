@@ -21,7 +21,7 @@ int main(void)
     printf("Sum is: %d", add(a, len));
     /*               ^
                      |
-                    We are not passing the whole arr    ay, we are just passing the base address of the array, as name of the array represents 
+                    We are not passing the whole array, we are just passing the base address of the array, as name of the array represents 
                     the base address of the array.
     */
     return 0;

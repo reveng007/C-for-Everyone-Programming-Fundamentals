@@ -18,5 +18,7 @@ int main(void)
         sum += grades[i];
     }
 
-    printf("\nMy average grades is %.2f\n\n", sum);
+    printf("\nMy average grades is %.2f\n\n", sum/len);
+
+    printf("Length of the array: %d", len);
 }

@@ -1,9 +1,9 @@
                                                                         Plane 1:                   Plane 2:               
                                                                        +---+---+---+             +---+---+---+
-    Plane  |-----> Row                                                 |   |   |   |             |   |   |   |
+    Plane  |-----> Row / No. of arrays                                 |   |   |   |             |   |   |   |
         |  |                                                           +---+---+---+             +---+---+---+
 int arr[2][3][4];                                                      |   |   |   |             |   |   |   |
-              |---------------> Column                                 +---+---+---+             +---+---+---+
+              |-----------> Column/Each of which contains 4 elements   +---+---+---+             +---+---+---+
                                                                        |   |   |   |             |   |   |   |
                                                                        +---+---+---+             +---+---+---+
 See: 12.3D_array.jpg                                                   |   |   |   |             |   |   |   |
@@ -45,9 +45,9 @@ ________________________________________________________
 int a[2][3] = { {1, 2, 3}, {4, 5, 6}};
 
 
-for(i=0; i<2; i++) // Rows              2 for loop
+for(i=0; i<2; i++) // Rows/ No. of arrays             2 for loop
 {
-    for(j=0; j< 3; j++) // Columns
+    for(j=0; j< 3; j++) // Columns/ Each of which contains 3 elements
     {
         printf("%d", a[i][j]);
     }
@@ -63,12 +63,12 @@ int a[2][2][3] = {
 
                     {{7, 8, 9}, {10, 11, 12}}
                 }
-
+                                                                3  for loop
 for(i = 0; i<2; i++) // Plane
 {
-    for(j = 0; j<2; j++)  // Row 
+    for(j = 0; j<2; j++)  // Row / No. of arrays
     {
-        for(k = 0; k < 3; k++) // Column
+        for(k = 0; k < 3; k++) // Column / Each of which contains 3 elements
         {
             printf("%d", a[i][j][k]);
         }

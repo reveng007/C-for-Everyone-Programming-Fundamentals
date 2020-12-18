@@ -35,9 +35,9 @@ int main(void)
     // Row Sum ------------------> In this case, Column pointer is changing, While row is remaining static when calcualtion is going on for Row 1... In this way.....
     
     printf("\nRow Sum: ");
-    for(i = 0; i<5; i++) // Row
+    for(i = 0; i<5; i++) // Row/ No. of arrays
     {   
-        for(j=0; j<5; j++) // Column
+        for(j=0; j<5; j++) // Column / Each of which contains 5 elements
         {
             sum += arr[i][j];
             //printf(" %d\t", sum);
@@ -51,9 +51,9 @@ int main(void)
     // Column Sum --------------------> In this case, Row pointer is changing, While column is remaining static when calcualtion is going on for Column 1... In this way.....
 
     printf("Column Sum: ");
-    for(j = 0; j<5; j++) // Column
+    for(j = 0; j<5; j++) // Column / Each of which contains 5 elements
     {
-        for(i = 0; i<5; i++) // Row
+        for(i = 0; i<5; i++) // Row / No. of arrays
         {
             sum += arr[i][j];
         }

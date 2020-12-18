@@ -1,7 +1,7 @@
 syntax:
             
            Rows/No. of arrays
-            ^  __________|---> Columns/Each of which contains 2 elements
+            ^  __________|---> Columns/Each of which contains 5 elements
             |  |
 data_type a[3][5];
 
@@ -53,7 +53,7 @@ int a[2][3] = { {1, 2, 3}, {4, 5, 6}};
 
 for(i=0; i<2; i++) // Rows/No. of arrays
 {
-    for(j=0; j< 3; j++) // Columns/Each of which contains 2 elements
+    for(j=0; j< 3; j++) // Columns/Each of which contains 5 elements
     {
         printf("%d", a[i][j]);
     }

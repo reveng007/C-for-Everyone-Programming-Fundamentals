@@ -160,3 +160,7 @@ So, here 'a' is the pointer to the 1st 2D array not 1D array
 
    For 3D array, we need 3 * operator to access values within
    array.
+
+
+See rest of the videos related to GATE, from here: https://www.youtube.com/watch?v=ZiA6HB7JbxE&list=PLBlnK6fEyqRjoG6aJ4FvFU1tlXbjLBiOP&index=34&t=197s
+

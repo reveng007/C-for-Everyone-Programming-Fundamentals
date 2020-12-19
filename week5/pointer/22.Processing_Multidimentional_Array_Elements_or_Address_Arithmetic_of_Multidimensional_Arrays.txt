@@ -1,0 +1,162 @@
+
+Follow : https://www.youtube.com/watch?v=3fOPOUnkcdQ&t=613s
+
+
+ 1D Array:
+ ----------
+
+    +----+----+----+----+
+ a  |    |    |    |    |
+ ^  +----+----+----+----+
+ |
+ |      int a[4];
+ |
+ |  means array of 4 integers
+ |
+ |--- pointers to first element of the array
+
+       a = 1000
+
+    => *a = 1 
+
+ 
+ 2D Array:
+ -----------
+
+    +----+----+----+----+
+ a  | 1  | 2  | 3  | 4  |
+    +----+----+----+----+
+     1000 1004 1008 1012
+    |________| |_________|
+        |          |__________
+        |                    |
+    Row 1/ Array 1         Row 2/ Array 2
+    
+        int a[2][2];
+              ^  ^
+              |  |----------------------------- Each of which contains 2 elements
+              |------------ 2 1D arrays
+               
+ 
+    ***NOTE: 
+
+        Unlike in 1D array, We cannot use dereferance operator to denote the 1st element of the array
+
+        As 'a' here is pointer to the 1st Whole 1D array.
+
+
+So, 
+
+How to do..??
+
+Here is the Solution:
+
+    +-----------+-----------+
+    |           |           |
+    | +----+----+----+----+ |
+    | | 1  | 2  | 3  | 4  | |
+ a  | +----+----+----+----+ |
+    | 1000 1004 | 1008 1012 |
+    |           |           |
+    |-----------+-----------|
+       1000        1008
+        |           |------------|
+        |                        |
+        |                        |------------|
+        V                                     V
+    Base Address: 1000                Base Address: 1008
+        |                                      |
+        |                                      |
+        |                                      |
+        V                                      |-----------------------|
+                                                                       V
+    a = 1000(pointer to the 1st 1D array)                    |    a + 1 = 1008(pointer to the 2nd 1D array)
+                                                             |
+    => *a = *(1000) -------> We will get the address of the  |    => *(a + 1) = *(1008) -----> We will get the address of 1st element of the 2nd 1D array
+                             1st element of the 1st 1D array |   
+                                                             |
+                                                             |   => **(a + 1) = **(1008) -----> We will get the value of 1st element of the 2nd 1D array
+                                                             |                  
+    => *a = 1000                                             |                = 3      
+                                                             |
+                                                             |   If we write:
+    We can write *a as :                                     |
+                                                             |          *(a + 1) + 1 = *(1008) -----> We will get the address of 2nd element of the 2nd 1D array
+    *a = *(a + 0) = a[0] = &a[0][0]                          |
+                                                             |
+                                                             |  => **(a + 1) + 1 = **(1008) -----> We will get the value of 2nd element of the 2nd 1D array
+So we can clearly see that by applying another * operator    |
+                                                             |                   = 4 
+we can access the value within array:                        |
+                                                             |
+                                                             |
+    **a = *(*a) = *(*(a + 0)) = *(&a[0][0])                  |
+                                                             |
+                                                             |
+    *(&a[0][0]) ==> a[0][0] = 1                              |
+                                                             |
+                                                             |
+                                                             |
+                                                             |
+
+
+3D Array:
+----------
+
+
+               
+                                                                       
+   Plane |-----> Row / Each of which contains 2 arrays
+      |  |                                                          
+int a[2][2][2];                                                      
+            |-----------> Column/Each of which contains 2 elements   
+                                                                       
+
+ 
+         Plane 1:               Plane 2:
+
+         +---+---+             +---+---+
+   a     | 1 | 2 |             | 5 | 6 |
+         +---+---+             +---+---+
+         | 3 | 4 |             | 7 | 8 |
+         +---+---+             +---+---+ 
+                                                               3D
+      +-----------------------------+--------------------------------+
+      |           2D                |                                |
+      |  +--------------+-----------+------------+----------------+  |
+      |  |        1D    |           |            |                |  |
+      |  |  +-----+-----+-----+-----+-----+------+------+------+  |  | 
+ a    |  |  |  1  |  2  |  3  |  4  |  5  |  6   |  7   |  8   |  |  |
+      |  |  +-----+-----+-----+-----+-----+------+------+------+  |  |
+      |  |   1000  1004 | 1008 1012 | 1016  1020 | 1024   1028    |  |
+      |  +--------------+-----------+------------+----------------+  |
+      |      1000         1008      |  1016          1024            |
+      +-----------------------------+--------------------------------+
+                1000                           1016
+
+
+So, here 'a' is the pointer to the 1st 2D array not 1D array
+
+     a = 1000 = pointer to the 1st 2D array                   |    and a + 1 = 1016 = pointer to the 2nd 2D array 
+                                                              |
+   => *a = *(1000) = pointer to 1st 1D array of 1st 2D array  |       => *(a + 1) = *(1016) = pointer to 1st 1D array of 2nd 2D array = 1016
+                                                              |       
+   => *(*(a)) = pointer to 1st address of 1st 1D array        |       => *(*(a+1)) = pointer to 1st address of 1st 1D array of 2nd 2D array. = *(*(1016)) = 1016
+                                                              |
+      of 1st 2D array. = *(*(1000)) = 1000                    |
+                                                              |
+   => *(*(*(a))) = 1st element in a[0][0][0] = 1              |       => *(*(*(a+1))) = 1st element in a[1][0][0] = 5
+                                                              |
+
+ 
+
+***NOTE:                                                     
+                                                             
+   For 1D array, we need 1 * operator to access values within
+   array.                                                       
+                                                             
+   For 2D array, we need 2 * operator to access values within
+   array.
+
+   For 3D array, we need 3 * operator to access values within
+   array.

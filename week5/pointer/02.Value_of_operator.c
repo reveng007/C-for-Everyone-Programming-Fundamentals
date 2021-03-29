@@ -150,38 +150,38 @@ For example:               x
                             A segmentation fault occurs when a program attempts to access a memory location that it is not allowed to access,
                             or attempts to access a memory location in a way that is not allowed (for example, attempting to write to a 
                             read-only location, or to overwrite part of the operating system).
-        
+
 */
 
 
 #include <stdio.h>
- 
+
 int main(void)
-{ 
-    int x;            /* A normal integer*/
-    int *ptr;           /* A pointer to an integer ("*p" is an integer, so p
-                       must be a pointer to an integer) */
- 
-    ptr = &x;           /* Read it, "assign the address of x to p" */
-    printf("Enter value of x: ");
-    scanf( "%d", &x );          /* Put a value in x, we could also use p here */
-    printf("So value of x is %d\n", *ptr ); /* Note the use of the * to get the value of the object*/
-    
-    printf("And address of x is: %d\n", ptr); /* Note only p is used to ouput the address of x */
+{
+	int x;                          /* A normal integer*/
+	int *ptr;                       /* A pointer to an integer ("*p" is an integer, so p
+                                           must be a pointer to an integer) */
 
-    *ptr = 1000; // changing the value of the object pointed by the pointer
+	ptr = &x;                      /* Read it, "assign the address of x to p" */
+	printf("Enter value of x: ");
+	scanf( "%d", &x );             /* Put a value in x, we could also use p here */
+	printf("int *ptr; ptr = &x;");
+	printf("So value of x (or *ptr) is %d\n", *ptr ); /* Note the use of the * to get the value of the object*/
+	printf("And address of x (or ptr) is: %d\n", ptr); /* Note only p is used to ouput the address of x */
 
-    printf("So value of x is %d\n", *ptr ); /* Note the use of the * to get the value of the object*/
-    
-    printf("And address of x is: %d\n", ptr); /* Note only p is used to ouput the address of x */
 
-    printf("Notice that the address of x is same even after the value of x is changed\n");
+	*ptr = 1000; // changing the value of the object pointed by the pointer
 
-    printf("Value of x: %d\n", x);
+	printf("Assigned: *ptr = 1000");
 
-    printf("Value of x: %d", *(&x)); // x = *(&x)
+	printf("So value of x (or *ptr) is %d\n", *ptr ); /* Note the use of the * to get the value of the object*/
+	printf("And address of x (or ptr) is: %d\n", ptr); /* Note only p is used to ouput the address of x */
+	printf("Notice that the address of x is same even after the value of x is changed because we have only changed the value not the address\n");
 
-    return 0;
+	printf("Value of x: %d\n", x);
+	printf("Value of x (or *(&x)): %d", *(&x)); // x = *(&x)
+
+	return 0;
 }
 
 /*
